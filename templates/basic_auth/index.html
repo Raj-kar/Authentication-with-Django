@@ -1,0 +1,20 @@
+
+{% extends 'basic_auth/base.html' %}
+
+{% block title %} 
+    Happy Hacking :)
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            {% if user.is_authenticated %}
+                <h1 class="display-8">You are Logged in !</h1>
+                <h3> View <a href="{% url 'basic_auth:secret' %}">Secret</a> Page</h3>
+            {% else %}
+                <h1 class="display-9">Django Authentication</h1>
+                <h5><a href="{% url 'basic_auth:login' %}">Login</a> for see the special Page ;) </h5>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

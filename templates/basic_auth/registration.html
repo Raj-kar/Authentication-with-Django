@@ -1,0 +1,30 @@
+{% extends 'basic_auth/base.html' %}
+{% load static %} 
+
+{% block title %}
+    Registration Page :)
+{% endblock %}
+
+{% block styles %} 
+    <link rel="stylesheet" href="{% static 'basic_auth/styles.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="jumbotron">
+    {% if registered %}
+        <h1 class="display-1">Thank your for your Registration</h1>
+    {% else %}  
+        <h1>Resgiter Now </h1>
+        <p>It's free..</p>
+
+        <form enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <input class="btn btn-primary" type="submit" value="Resgiter">
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}
+
