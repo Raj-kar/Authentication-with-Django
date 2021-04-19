@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+}
+
+@media only screen and (min-width: 1370px) and (max-width: 2000px) {
+    .login-form {
+        background-color: #fff;
+        width: 40rem;
+        margin: auto;
+    }
+
+    h1 {
+        margin-bottom: 2rem;
+    }
+}
